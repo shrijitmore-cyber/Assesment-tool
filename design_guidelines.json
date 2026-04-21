@@ -1,0 +1,141 @@
+{
+  "theme": "light",
+  "archetype": "4 (Swiss & High-Contrast)",
+  "vibe": "Editorial, confident, data-forward, C-suite executive polish, objective",
+  "colors": {
+    "background": "#F9F9F8",
+    "surface": "#FFFFFF",
+    "surface_secondary": "#F4F4F5",
+    "primary": "#002FA7",
+    "primary_hover": "#00227A",
+    "text_primary": "#0A0A0A",
+    "text_secondary": "#52525B",
+    "border": "#E5E5E5",
+    "status": {
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "error": "#DC2626"
+    },
+    "heatmap_scale": [
+      "#F4F4F5",
+      "#E0E7FF",
+      "#A5B4FC",
+      "#6366F1",
+      "#3730A3"
+    ]
+  },
+  "typography": {
+    "heading_font": "Chivo",
+    "body_font": "IBM Plex Sans",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap",
+    "rules": {
+      "h1": "text-5xl md:text-6xl font-black tracking-tighter leading-none text-[#0A0A0A]",
+      "h2": "text-3xl md:text-4xl font-bold tracking-tight text-[#0A0A0A]",
+      "h3": "text-xl md:text-2xl font-bold tracking-tight text-[#0A0A0A]",
+      "body": "text-base font-normal leading-relaxed text-[#52525B]",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-[#52525B]"
+    }
+  },
+  "layout_spacing": {
+    "container_padding": "p-6 md:p-12 lg:p-16",
+    "card_padding": "p-6 md:p-8",
+    "gap_marketing": "gap-12 md:gap-24",
+    "gap_dashboard": "gap-4 md:gap-6",
+    "grid_borders": "Use border-collapse style layouts for data sections to expose the grid skeleton (Technical Look)."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#002FA7] text-white hover:bg-[#00227A] rounded-none px-6 py-3 font-medium transition-colors",
+      "secondary": "bg-transparent text-[#0A0A0A] border border-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white rounded-none px-6 py-3 font-medium transition-all"
+    },
+    "cards": {
+      "dashboard": "bg-white border border-[#E5E5E5] rounded-none shadow-none hover:shadow-sm transition-shadow",
+      "marketing_bento": "bg-[#F4F4F5] border-none rounded-none p-8 flex flex-col justify-between"
+    },
+    "inputs": {
+      "default": "border-b border-[#E5E5E5] bg-transparent rounded-none px-0 py-2 focus:border-[#002FA7] focus:ring-0 transition-colors placeholder:text-[#A1A1AA]"
+    },
+    "likert_scale": {
+      "style": "Flex container of 5 connected rectangular blocks. Default: bg-white border border-[#E5E5E5] text-[#52525B]. Selected: bg-[#002FA7] text-white border-[#002FA7]. Hover: bg-[#F4F4F5] for unselected."
+    },
+    "radar_chart": {
+      "style": "Recharts RadarChart. Stroke: #002FA7 (2px). Fill: #002FA7 (15% opacity). Grids: straight lines (polygon), not circular, stroke: #E5E5E5. Dots: solid #002FA7."
+    }
+  },
+  "pages": {
+    "marketing_landing": {
+      "layout": "Asymmetrical hero with overlapping elements. Large Chivo typography. Editorial bento grid for value props.",
+      "sections": ["Hero", "Benchmark Logos Marquee", "Value Props (Bento)", "How it Works (Step Grid)", "CTA"]
+    },
+    "auth": {
+      "layout": "Split screen: 50% abstract architecture image, 50% stark white minimalist form with IBM Plex Sans inputs."
+    },
+    "dashboard_shell": {
+      "layout": "Left sidebar (narrow, 240px, dark charcoal #0A0A0A bg with white text), top header (white, glassmorphism), main content area (off-white bg)."
+    },
+    "assessment_flow": {
+      "layout": "Centered maximum 800px width. Clear segmented progress bar at top. One question or one dimension per view to reduce cognitive load."
+    },
+    "results_report": {
+      "layout": "Dashboard grid (Control Room mode). Massive hero number for AIM Index. Side-by-side radar chart and heatmap. Printable A4 layout optimization for 'Export to PDF' feeling."
+    }
+  },
+  "motion": {
+    "hover": "Subtle and professional. Colors shift 1-2 shades darker. No bouncy or playful animations.",
+    "page_transition": "Simple opacity fade-in.",
+    "charts": "Recharts default smooth easing."
+  },
+  "assets": {
+    "images": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/b7dc9aa9-c54d-427d-8f6f-7958b15ad824/images/17a6bfad5bafbbe11b7d546d4eb8f49997a1a74e73bdf568d707e26618cc1573.png",
+        "category": "marketing_hero",
+        "description": "Abstract geometric data visualization for the main hero background or right-side hero graphic."
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/b7dc9aa9-c54d-427d-8f6f-7958b15ad824/images/055a97b565b3e265178babb400979cb210f4b2e2fad6633f0fb58f95aaa6e274.png",
+        "category": "marketing_feature",
+        "description": "Premium printed corporate report on a concrete desk for the 'Personalized AIM Roadmap' feature section."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1769053225958-62ff8751aa4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwyfHxjLXN1aXRlJTIwcHJvZmVzc2lvbmFsJTIwbW9kZXJuJTIwb2ZmaWNlJTIwYnVpbGRpbmclMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzc2NzU1ODc1fDA&ixlib=rb-4.1.0&q=85",
+        "category": "auth_background",
+        "description": "Modern concrete building with geometric facade for the Auth split-screen background."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1588333238936-10973c74118f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nbyUyMGJsYWNrJTIwYW5kJTIwd2hpdGUlMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc3Njc1NTg4OXww&ixlib=rb-4.1.0&q=85",
+        "category": "logo",
+        "description": "Partner/Benchmark company logo 1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1543441235-e8c913dea2d7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nbyUyMGJsYWNrJTIwYW5kJTIwd2hpdGUlMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc3Njc1NTg4OXww&ixlib=rb-4.1.0&q=85",
+        "category": "logo",
+        "description": "Partner/Benchmark company logo 2"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3Njc1NTg4OXww&ixlib=rb-4.1.0&q=85",
+        "category": "avatar",
+        "description": "Professional headshot for Super Admin or Consultant avatar."
+      },
+      {
+        "url": "https://images.pexels.com/photos/14589344/pexels-photo-14589344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "avatar",
+        "description": "Professional headshot for User or Employee avatar."
+      }
+    ],
+    "icons": "Phosphor Icons (@phosphor-icons/react) - Use Duotone weight for marketing, Regular weight for dashboards. Highly professional, geometric."
+  },
+  "testing": {
+    "rules": "All interactive and key informational elements MUST include a 'data-testid' attribute (e.g., data-testid='start-assessment-btn')."
+  },
+  "instructions_to_main_agent": [
+    "DO NOT use Inter or generic purple/teal gradients. Adhere to the strict Archetype 4 Swiss & High-Contrast palette.",
+    "Use Chivo for all Headings and IBM Plex Sans for body. Apply tight letter spacing (tracking-tight) to headings.",
+    "Dashboard must feel like a high-end data terminal (Swiss grid, 1px borders, dense). Do not round card corners; keep them sharp (rounded-none).",
+    "For the assessment Likert scale, do not use native radio buttons. Build a custom group of 5-7 rectangular selectable blocks.",
+    "Implement Recharts for the Radar Chart with strict #002FA7 lines and straight (polygon) grid edges.",
+    "Implement the Heatmap as a CSS Grid of squares changing background color based on the value.",
+    "Ensure the application layout strictly follows the grid spacing guidelines and uses the provided media URLs.",
+    "Include 'data-testid' on all interactive elements as required."
+  ]
+}
