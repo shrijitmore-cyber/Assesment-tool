@@ -1,34 +1,35 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+html, body, #root {
+    height: 100%;
+    background: #f9f9f8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+body {
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    color: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-chivo {
+    font-family: "Chivo", system-ui, sans-serif;
+}
+
+*:focus-visible {
+    outline: 2px solid #002fa7;
+    outline-offset: 2px;
+}
+
+::selection {
+    background: #002fa7;
+    color: #ffffff;
+}
+
+@media print {
+    header.print\:hidden {
+        display: none !important;
     }
-}
-
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
+    body {
+        background: #ffffff;
     }
 }
