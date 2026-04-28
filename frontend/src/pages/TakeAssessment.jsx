@@ -36,6 +36,22 @@ export default function TakeAssessment() {
   );
   const progress = totalQuestions ? Math.round((totalAnswered / totalQuestions) * 100) : 0;
 
+  // Live AIM Index — average of dimensions that have at least one answer.
+  const liveScore = useMemo(() => {
+    if (!template) return null;
+    const dimAvgs = [];
+    for (const d of template.dimensions) {
+      const vals = d.questions
+        .map((_q, i) => answers[`${d.id}_${i}`])
+        .filter((v) => typeof v === "number");
+      if (vals.length === 0) continue;
+      const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+      dimAvgs.push(((avg - 1) / 4) * 100);
+    }
+    if (dimAvgs.length === 0) return null;
+    return Math.round((dimAvgs.reduce((a, b) => a + b, 0) / dimAvgs.length) * 10) / 10;
+  }, [answers, template]);
+
   const setAns = (key, v) => setAnswers((a) => ({ ...a, [key]: v }));
 
   const saveProgress = async () => {
@@ -97,8 +113,19 @@ export default function TakeAssessment() {
               {dim.overline} · {dim.name}
             </div>
           </div>
-          <div className="text-xs uppercase tracking-[0.2em] text-[#52525B]" data-testid="assessment-progress-label">
-            {totalAnswered}/{totalQuestions} · {progress}%
+          <div className="flex items-center gap-6">
+            <div className="text-right" data-testid="live-aim-index">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-[#52525B]">Live AIM Index</div>
+              <div
+                className="font-black text-2xl text-[#002FA7] tabular-nums transition-all"
+                style={{ fontFamily: "Chivo" }}
+              >
+                {liveScore != null ? liveScore.toFixed(1) : "—"}
+              </div>
+            </div>
+            <div className="text-xs uppercase tracking-[0.2em] text-[#52525B]" data-testid="assessment-progress-label">
+              {totalAnswered}/{totalQuestions} · {progress}%
+            </div>
           </div>
         </div>
         <div className="h-[3px] bg-[#E5E5E5]">
@@ -136,11 +163,63 @@ export default function TakeAssessment() {
 
         <div className="text-xs uppercase tracking-[0.3em] text-[#002FA7] font-bold">
           Dimension {dimIdx + 1} / {template.dimensions.length}
+          {dim.is_advanced && (
+            <span
+              className="ml-3 inline-block px-2 py-0.5 bg-[#0A0A0A] text-white text-[10px] tracking-[0.25em]"
+              data-testid="advanced-badge"
+            >
+              Advanced
+            </span>
+          )}
         </div>
         <h1 className="text-3xl md:text-4xl font-black tracking-tighter mt-3" style={{ fontFamily: "Chivo" }}>
           {dim.name}
         </h1>
         <p className="text-[#52525B] mt-2 max-w-2xl">{dim.description}</p>
+
+        {(dim.definition || dim.focus || (dim.evaluate_based_on || []).length > 0) && (
+          <div
+            className="mt-8 grid md:grid-cols-3 gap-0 border border-[#E5E5E5] bg-white"
+            data-testid="dimension-brief"
+          >
+            {dim.definition && (
+              <div className="p-6 border-b md:border-b-0 md:border-r border-[#E5E5E5]">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-[#002FA7] font-bold">
+                  — Definition
+                </div>
+                <div className="text-sm mt-3 text-[#0A0A0A] leading-relaxed">{dim.definition}</div>
+              </div>
+            )}
+            {(dim.evaluate_based_on || []).length > 0 && (
+              <div className="p-6 border-b md:border-b-0 md:border-r border-[#E5E5E5]">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-[#002FA7] font-bold">
+                  — Evaluate based on
+                </div>
+                <ul className="mt-3 space-y-1.5 text-sm text-[#0A0A0A] leading-snug">
+                  {dim.evaluate_based_on.map((c, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-[#A1A1AA] tabular-nums">0{i + 1}</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {dim.focus && (
+              <div className="p-6 bg-[#0A0A0A] text-white">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-[#7A91D8] font-bold">
+                  — Focus question
+                </div>
+                <div
+                  className="text-base font-bold tracking-tight mt-3 leading-snug"
+                  style={{ fontFamily: "Chivo" }}
+                >
+                  {dim.focus}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
         <div className="mt-10 space-y-12">
           {dim.questions.map((q, i) => {
