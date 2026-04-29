@@ -24,11 +24,11 @@ ORG_STAGES = [
 ]
 
 IND_STAGES = [
-    {"min": 0,  "max": 40, "name": "Foundational", "blurb": "Limited exposure; building vocabulary and basic skills."},
-    {"min": 40, "max": 55, "name": "Aware",        "blurb": "Understands AI concepts and experiments with tools."},
-    {"min": 55, "max": 70, "name": "Applied",      "blurb": "Actively using AI to improve day-to-day work."},
-    {"min": 70, "max": 85, "name": "Integrated",   "blurb": "AI is a native part of workflow and decision making."},
-    {"min": 85, "max": 101,"name": "Champion",     "blurb": "Mentors peers, drives responsible adoption at scale."},
+    {"min": 0,  "max": 40, "name": "Awareness",          "blurb": "Curious and exploring — building vocabulary and trying tools."},
+    {"min": 40, "max": 55, "name": "Working Knowledge",  "blurb": "Understands core concepts and uses AI tools confidently."},
+    {"min": 55, "max": 70, "name": "Practitioner",       "blurb": "Applies AI to real work; ships outcomes and iterates."},
+    {"min": 70, "max": 85, "name": "Leader / Innovator", "blurb": "Designs strategy, mentors others, drives adoption."},
+    {"min": 85, "max": 101,"name": "Mastery & Scale",    "blurb": "Architects enterprise AI; sets standards and governance."},
 ]
 
 # Peer benchmark (static industry average, 0-100) per dimension.
@@ -42,9 +42,13 @@ ORG_BENCHMARKS = {
 }
 
 IND_BENCHMARKS = {
-    "capability": 57,
-    "mindset": 63,
-    "accountability": 52,
+    "fundamentals": 55,
+    "data": 50,
+    "genai": 62,
+    "tools": 58,
+    "usecases": 48,
+    "responsible": 45,
+    "projects": 47,
 }
 
 ORG_TEMPLATE = {
@@ -190,49 +194,277 @@ IND_TEMPLATE = {
     "id": "ind-aim-v1",
     "slug": "individual",
     "audience": "individual",
-    "title": "Individual Digital & AI Readiness",
-    "subtitle": "Assess your personal AI capability, mindset and accountability.",
-    "duration_minutes": 5,
+    "title": "Individual AI Upskilling Roadmap",
+    "subtitle": "Pinpoint your level across 7 capability tracks — Awareness to Mastery & Scale.",
+    "duration_minutes": 6,
     "stages": IND_STAGES,
     "benchmarks": IND_BENCHMARKS,
+    "question_levels": ["Awareness", "Working Knowledge", "Practitioner", "Leader / Innovator", "Mastery & Scale"],
     "dimensions": [
         {
-            "id": "capability",
-            "name": "Capability — Skill & Competence",
+            "id": "fundamentals",
+            "name": "AI Fundamentals",
             "overline": "01",
-            "description": "Your technical and practical ability to work with AI tools and data.",
+            "is_advanced": False,
+            "definition": "Your grasp of core AI, ML, and GenAI concepts — and how they translate into real solutions.",
+            "focus": "How well do you understand what AI is and where it applies?",
+            "evaluate_based_on": [
+                "Familiarity with AI, ML and GenAI concepts",
+                "Knowledge of model types and architectures",
+                "Ability to translate AI concepts into solutions",
+                "Skill in benchmarking and evaluating AI approaches",
+                "Capability to design enterprise AI strategy",
+            ],
+            "description": "Pick the statement that best describes where you are today on each row.",
             "questions": [
-                "I can confidently use modern AI tools (chat, copilots, analytics) in my work.",
-                "I understand how core AI concepts like LLMs, embeddings and automation work.",
-                "I can evaluate when an AI solution is appropriate vs. a traditional approach.",
-                "I regularly pick up new AI tools and integrate them into my workflow.",
-                "I can critically assess AI outputs for accuracy and bias.",
+                {
+                    "stem": "Your grasp of AI / ML / GenAI concepts",
+                    "options": [
+                        "Understand AI, ML & GenAI concepts",
+                        "Understand different AI techniques & architectures",
+                        "Apply AI tools & models to solve problems",
+                        "Evaluate AI approaches for different contexts",
+                        "Design and lead AI strategies for the organisation",
+                    ],
+                },
+                {
+                    "stem": "Your handle on AI use cases & model types",
+                    "options": [
+                        "Distinguish narrow AI from general AI use cases",
+                        "Explore model types: supervised, unsupervised, LLMs",
+                        "Translate AI concepts into practical solutions",
+                        "Benchmark AI model performance & trade-offs",
+                        "Advise on AI investment & capability roadmaps",
+                    ],
+                },
             ],
         },
         {
-            "id": "mindset",
-            "name": "Mindset — Adoption & Behavior",
+            "id": "data",
+            "name": "Data Literacy",
             "overline": "02",
-            "description": "Your willingness to learn, experiment and adapt to AI-driven change.",
+            "is_advanced": False,
+            "definition": "Your ability to read, interpret, transform and govern data for AI-driven decisions.",
+            "focus": "Can you find signal in data and trust what you see?",
+            "evaluate_based_on": [
+                "Understanding of data types and quality basics",
+                "Skill in interpreting dashboards and reports",
+                "Ability to clean, transform and visualise data",
+                "Design of data governance for your function",
+                "Leadership of enterprise data strategy",
+            ],
+            "description": "Pick the statement that best describes where you are today on each row.",
             "questions": [
-                "I see AI as an opportunity, not a threat, to my role.",
-                "I actively seek out AI-related learning content and communities.",
-                "I share AI experiments and learnings with my peers.",
-                "I challenge my own assumptions and processes using AI.",
-                "I adjust quickly when new AI capabilities change how my work is done.",
+                {
+                    "stem": "Your data fluency in day-to-day work",
+                    "options": [
+                        "Understand types of data & data quality basics",
+                        "Interpret data insights & dashboards",
+                        "Perform data analysis using tools (Excel, SQL, Python)",
+                        "Design data-driven decision frameworks",
+                        "Lead enterprise data strategy for AI readiness",
+                    ],
+                },
+                {
+                    "stem": "Your ability to draw insight from data",
+                    "options": [
+                        "Know the difference between structured & unstructured data",
+                        "Identify trends, outliers & key metrics in reports",
+                        "Clean, transform & visualise data for insights",
+                        "Define data governance standards for your function",
+                        "Build data culture & literacy across the organisation",
+                    ],
+                },
             ],
         },
         {
-            "id": "accountability",
-            "name": "Accountability — Responsible Usage",
+            "id": "genai",
+            "name": "GenAI & Prompt Engineering",
             "overline": "03",
-            "description": "Your responsible, business-aligned and ethical use of AI.",
+            "is_advanced": False,
+            "definition": "Your skill with generative AI tools, prompting techniques, and AI-assisted workflows.",
+            "focus": "How effectively can you put GenAI to work?",
+            "evaluate_based_on": [
+                "Daily productivity gains from GenAI tools",
+                "Skill with structured prompts and templates",
+                "Building AI-assisted workflows for recurring tasks",
+                "Designing multi-step prompt chains & RAG pipelines",
+                "Developing AI agents and enterprise assistants",
+            ],
+            "description": "Pick the statement that best describes where you are today on each row.",
             "questions": [
-                "I understand the data, privacy and IP implications of the AI tools I use.",
-                "I follow my organization's responsible AI guidelines and policies.",
-                "I align AI usage decisions with clear business outcomes and KPIs.",
-                "I validate and attribute AI outputs before acting on or sharing them.",
-                "I consider fairness, bias and downstream impact when deploying AI.",
+                {
+                    "stem": "Your use of GenAI in your workflow",
+                    "options": [
+                        "Use GenAI tools for day-to-day productivity",
+                        "Create structured prompts & prompt templates",
+                        "Build AI-assisted workflows for recurring tasks",
+                        "Design multi-step prompt chains & RAG pipelines",
+                        "Develop AI agents & enterprise-grade assistants",
+                    ],
+                },
+                {
+                    "stem": "Your prompting craft and quality control",
+                    "options": [
+                        "Experiment with ChatGPT, Claude & Gemini",
+                        "Apply prompt patterns: role, context, format, chain-of-thought",
+                        "Automate content, research & analysis with GenAI",
+                        "Evaluate output quality & reduce hallucinations",
+                        "Define prompt governance & GenAI usage standards",
+                    ],
+                },
+            ],
+        },
+        {
+            "id": "tools",
+            "name": "AI Tools & Platforms",
+            "overline": "04",
+            "is_advanced": False,
+            "definition": "Your hands-on experience with AI-powered tools, no-code platforms, and ML services.",
+            "focus": "How deep is your stack of AI tools and platforms?",
+            "evaluate_based_on": [
+                "Daily use of AI productivity tools",
+                "Ability to build with no-code AI platforms",
+                "Hands-on with AutoML and ML services",
+                "Integrating AI APIs into existing systems",
+                "Architecting end-to-end AI platforms and MLOps",
+            ],
+            "description": "Pick the statement that best describes where you are today on each row.",
+            "questions": [
+                {
+                    "stem": "Your range of AI tools in daily work",
+                    "options": [
+                        "Use AI-powered productivity tools in daily work",
+                        "Work with no-code AI tools & platforms",
+                        "Develop & fine-tune ML models using platforms",
+                        "Integrate AI APIs into existing systems",
+                        "Architect end-to-end AI solutions & platforms",
+                    ],
+                },
+                {
+                    "stem": "Your ability to build and integrate AI",
+                    "options": [
+                        "Explore Copilot, Notion AI & Grammarly in workflows",
+                        "Build automations using Make, Zapier & no-code AI",
+                        "Use AutoML, Azure ML or Vertex AI for model building",
+                        "Connect AI services via REST APIs & SDKs",
+                        "Design scalable AI infrastructure & MLOps pipelines",
+                    ],
+                },
+            ],
+        },
+        {
+            "id": "usecases",
+            "name": "AI Use Cases",
+            "overline": "05",
+            "is_advanced": False,
+            "definition": "Your ability to spot, prioritise, pilot and scale AI opportunities tied to business value.",
+            "focus": "Can you turn AI capability into measurable business outcomes?",
+            "evaluate_based_on": [
+                "Spotting AI opportunities in your role",
+                "Mapping use cases to business problems",
+                "Running end-to-end AI pilots",
+                "Scaling pilots across functions",
+                "Leading AI innovation programmes and CoEs",
+            ],
+            "description": "Pick the statement that best describes where you are today on each row.",
+            "questions": [
+                {
+                    "stem": "Your ability to identify and frame AI opportunities",
+                    "options": [
+                        "Identify AI opportunities in your role & team",
+                        "Map AI use cases to specific business problems",
+                        "Implement AI pilot solutions end-to-end",
+                        "Scale successful AI pilots across functions",
+                        "Lead AI innovation programmes & strategy",
+                    ],
+                },
+                {
+                    "stem": "Your discipline in piloting and scaling AI",
+                    "options": [
+                        "Spot tasks that AI can augment or automate",
+                        "Prioritise use cases by feasibility & impact",
+                        "Run experiments, track metrics & iterate quickly",
+                        "Build business cases for AI investment & scale",
+                        "Create AI Centre of Excellence & community of practice",
+                    ],
+                },
+            ],
+        },
+        {
+            "id": "responsible",
+            "name": "Responsible AI",
+            "overline": "06",
+            "is_advanced": False,
+            "definition": "Your discipline around AI ethics, bias, risk, governance and compliant usage.",
+            "focus": "Are you a trusted, responsible operator of AI?",
+            "evaluate_based_on": [
+                "Awareness of ethics, bias and fairness fundamentals",
+                "Application of responsible AI in daily use",
+                "Implementation of governance checks in projects",
+                "Auditing AI systems for bias and risk",
+                "Designing org-wide AI governance frameworks",
+            ],
+            "description": "Pick the statement that best describes where you are today on each row.",
+            "questions": [
+                {
+                    "stem": "Your application of responsible AI principles",
+                    "options": [
+                        "Understand AI ethics, bias & fairness fundamentals",
+                        "Apply responsible AI principles in daily AI use",
+                        "Implement governance checks in AI projects",
+                        "Audit AI systems for bias, risk & compliance",
+                        "Design organisation-wide AI governance frameworks",
+                    ],
+                },
+                {
+                    "stem": "Your handling of AI risk, transparency and policy",
+                    "options": [
+                        "Know the risks of hallucination, bias & misuse",
+                        "Follow responsible AI guidelines & data privacy rules",
+                        "Document model decisions & risk mitigations",
+                        "Champion transparency & explainability in AI outputs",
+                        "Set AI policy, ethics board & regulatory compliance",
+                    ],
+                },
+            ],
+        },
+        {
+            "id": "projects",
+            "name": "AI Project Skills",
+            "overline": "07",
+            "is_advanced": False,
+            "definition": "Your effectiveness in delivering AI initiatives — from scoping through scaling.",
+            "focus": "Can you reliably ship AI initiatives that create value?",
+            "evaluate_based_on": [
+                "Understanding the AI project lifecycle",
+                "Working effectively with technical teams",
+                "Delivering pilots into production",
+                "Managing risks, timelines and resources",
+                "Leading large-scale AI transformation",
+            ],
+            "description": "Pick the statement that best describes where you are today on each row.",
+            "questions": [
+                {
+                    "stem": "Your end-to-end AI project delivery",
+                    "options": [
+                        "Understand the AI project lifecycle",
+                        "Work effectively with AI & data science teams",
+                        "Deliver AI solutions from pilot to production",
+                        "Manage AI project risks, timelines & resources",
+                        "Lead large-scale AI transformation programmes",
+                    ],
+                },
+                {
+                    "stem": "Your business-technical bridging and value tracking",
+                    "options": [
+                        "Know key phases: data, model, deploy, monitor",
+                        "Bridge business requirements & technical teams",
+                        "Apply agile delivery methods to AI projects",
+                        "Establish KPIs & value measurement for AI delivery",
+                        "Drive org change management for AI adoption",
+                    ],
+                },
             ],
         },
     ],
@@ -296,23 +528,47 @@ ORG_ROADMAP = {
 }
 
 IND_ROADMAP = {
-    "capability": {
-        "title": "Deepen your AI skill stack",
-        "actions_30": "Pick 2 AI tools core to your role; complete guided tutorials.",
-        "actions_60": "Ship 1 real work deliverable end-to-end with AI assistance.",
-        "actions_90": "Teach what you learned to 3 peers; publish a short internal write-up.",
+    "fundamentals": {
+        "title": "Build foundational AI fluency",
+        "actions_30": "Take a structured AI Fundamentals course; cover ML, LLMs, supervised vs unsupervised.",
+        "actions_60": "Build & demo a small project using one foundational technique (classification, summarisation, etc.).",
+        "actions_90": "Teach a 30-min internal session; document an AI learning roadmap for your team.",
     },
-    "mindset": {
-        "title": "Shift from curious to deliberate adopter",
-        "actions_30": "Join 1 AI community; schedule 30-minute weekly learning blocks.",
-        "actions_60": "Run a personal AI experiment challenging one core assumption in your work.",
-        "actions_90": "Mentor a peer through their first AI-assisted workflow.",
+    "data": {
+        "title": "Strengthen data literacy",
+        "actions_30": "Master one analytics tool (Excel pivots, SQL, or Python pandas); audit one dataset for quality.",
+        "actions_60": "Build a real dashboard or insight report from raw data; identify trends and outliers.",
+        "actions_90": "Define a data quality checklist for your function; ship monthly insight readouts.",
     },
-    "accountability": {
-        "title": "Use AI responsibly and business-aligned",
-        "actions_30": "Review your org's AI usage policy; list your current AI touchpoints.",
-        "actions_60": "Tie each AI usage to a business outcome and validate outputs before use.",
-        "actions_90": "Champion a responsible AI practice (fact-check, attribution, privacy) in your team.",
+    "genai": {
+        "title": "Level up GenAI & prompting",
+        "actions_30": "Adopt one GenAI tool daily; build a personal library of 10 reusable prompt templates.",
+        "actions_60": "Apply role / context / chain-of-thought prompting to ship one real deliverable end-to-end.",
+        "actions_90": "Build a multi-step GenAI workflow (RAG or agent) for a recurring task you own.",
+    },
+    "tools": {
+        "title": "Expand AI tools & platform proficiency",
+        "actions_30": "Pilot Copilot / Notion AI / Grammarly across daily tasks; measure time saved.",
+        "actions_60": "Build 2 automations using Make, Zapier or a no-code AI platform; share with peers.",
+        "actions_90": "Connect to one AI API (OpenAI, Claude, Gemini) via SDK; ship a small integrated tool.",
+    },
+    "usecases": {
+        "title": "Spot & ship AI use cases",
+        "actions_30": "Map 5 tasks in your role that AI could augment; rank them by impact × feasibility.",
+        "actions_60": "Pilot the strongest use case end-to-end; track 2-3 metrics weekly.",
+        "actions_90": "Build a business case for the pilot; pitch your sponsor for scaling.",
+    },
+    "responsible": {
+        "title": "Own responsible AI in your work",
+        "actions_30": "Review your org's responsible AI policy + one external framework (NIST AI RMF or EU AI Act).",
+        "actions_60": "Apply a bias / risk checklist to every AI output you ship; document mitigations.",
+        "actions_90": "Champion one governance practice (transparency, attribution, privacy) on your team.",
+    },
+    "projects": {
+        "title": "Master AI project delivery",
+        "actions_30": "Learn the AI project lifecycle; shadow one live AI project end-to-end.",
+        "actions_60": "Bridge a business + technical team conversation; produce one PRD or scope doc.",
+        "actions_90": "Define KPIs and a value-measurement plan; lead a sprint of execution on an AI initiative.",
     },
 }
 

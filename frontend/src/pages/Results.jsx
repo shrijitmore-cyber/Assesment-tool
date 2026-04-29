@@ -76,8 +76,8 @@ export default function Results() {
           <div className="p-10 bg-[#0A0A0A] text-white">
             <div className="text-[10px] uppercase tracking-[0.25em] text-white/60 font-bold">Next stage</div>
             {(() => {
-              const idx = (r.template_slug === "organizational" ? ["Foundational","Emerging","Structured","Operational","Transformational"] : ["Foundational","Aware","Applied","Integrated","Champion"]).indexOf(stage.name);
-              const stages = r.template_slug === "organizational" ? ["Foundational","Emerging","Structured","Operational","Transformational"] : ["Foundational","Aware","Applied","Integrated","Champion"];
+              const stages = r.template_slug === "organizational" ? ["Foundational","Emerging","Structured","Operational","Transformational"] : ["Awareness","Working Knowledge","Practitioner","Leader / Innovator","Mastery & Scale"];
+              const idx = stages.indexOf(stage.name);
               const nextName = idx < stages.length - 1 ? stages[idx + 1] : "Transformational";
               return (
                 <>

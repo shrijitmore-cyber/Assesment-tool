@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api, formatApiError } from "@/lib/api";
 import LikertScale from "@/components/LikertScale";
+import MaturityChoice from "@/components/MaturityChoice";
 
 export default function TakeAssessment() {
   const { id } = useParams();
@@ -224,20 +225,33 @@ export default function TakeAssessment() {
         <div className="mt-10 space-y-12">
           {dim.questions.map((q, i) => {
             const key = `${dim.id}_${i}`;
+            const isObj = typeof q === "object" && q !== null;
+            const stem = isObj ? q.stem : q;
+            const opts = isObj ? q.options : null;
             return (
               <div key={key} data-testid={`question-${key}`}>
                 <div className="flex items-baseline gap-3">
                   <div className="text-[10px] uppercase tracking-[0.25em] text-[#A1A1AA] font-bold">
                     Q{i + 1}
                   </div>
-                  <div className="text-lg font-medium leading-relaxed">{q}</div>
+                  <div className="text-lg font-medium leading-relaxed">{stem}</div>
                 </div>
                 <div className="mt-4">
-                  <LikertScale
-                    value={answers[key]}
-                    onChange={(v) => setAns(key, v)}
-                    testIdPrefix={`likert-${key}`}
-                  />
+                  {opts ? (
+                    <MaturityChoice
+                      levels={template.question_levels}
+                      options={opts}
+                      value={answers[key]}
+                      onChange={(v) => setAns(key, v)}
+                      testIdPrefix={`mc-${key}`}
+                    />
+                  ) : (
+                    <LikertScale
+                      value={answers[key]}
+                      onChange={(v) => setAns(key, v)}
+                      testIdPrefix={`likert-${key}`}
+                    />
+                  )}
                 </div>
               </div>
             );
