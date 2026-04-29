@@ -3,16 +3,24 @@ import { Link, useParams } from "react-router-dom";
 import { api, formatApiError } from "@/lib/api";
 import MaturityRadar from "@/components/MaturityRadar";
 import Heatmap from "@/components/Heatmap";
+import UpskillingMatrix from "@/components/UpskillingMatrix";
 
 export default function Results() {
   const { id } = useParams();
   const [r, setR] = useState(null);
+  const [template, setTemplate] = useState(null);
   const [err, setErr] = useState("");
 
   useEffect(() => {
     api
       .get(`/assessments/responses/${id}`)
-      .then((res) => setR(res.data))
+      .then((res) => {
+        setR(res.data);
+        return api.get(`/assessments/templates/${res.data.template_id}`);
+      })
+      .then((res) => {
+        if (res) setTemplate(res.data.template);
+      })
       .catch((e) => setErr(formatApiError(e)));
   }, [id]);
 
@@ -108,6 +116,20 @@ export default function Results() {
             <Heatmap rows={res.dimension_scores.map((d) => ({ name: d.name, score: d.score }))} />
           </div>
         </div>
+
+        {/* Upskilling matrix — individual only */}
+        {template && r.audience === "individual" && (
+          <div className="mt-12">
+            <div className="text-xs uppercase tracking-[0.3em] text-[#002FA7] font-bold mb-4">
+              — Your upskilling roadmap
+            </div>
+            <div className="text-sm text-[#52525B] mb-6 max-w-2xl">
+              Cells highlighted in cobalt show <strong>your current level</strong> on each track.
+              Cells to the right of "You" are your next-stage growth targets.
+            </div>
+            <UpskillingMatrix template={template} dimensionScores={res.dimension_scores} />
+          </div>
+        )}
 
         {/* Benchmarks */}
         <div className="mt-12 border border-[#E5E5E5] bg-white p-8">

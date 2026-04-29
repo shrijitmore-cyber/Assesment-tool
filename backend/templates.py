@@ -237,6 +237,36 @@ IND_TEMPLATE = {
                         "Advise on AI investment & capability roadmaps",
                     ],
                 },
+                {
+                    "stem": "Your ability to explain AI to non-technical audiences",
+                    "options": [
+                        "Describe what AI is in simple, everyday terms",
+                        "Explain how common AI tools work to a colleague",
+                        "Demo AI capabilities with relevant examples to your team",
+                        "Train others and shape AI literacy programmes",
+                        "Set the AI narrative and capability story for the organisation",
+                    ],
+                },
+                {
+                    "stem": "Your awareness of AI capability and limitations",
+                    "options": [
+                        "Know AI can make mistakes",
+                        "Understand basic limitations (hallucination, bias, drift)",
+                        "Spot edge cases and design solutions around them",
+                        "Define risk and capability frameworks for AI use",
+                        "Influence industry standards on AI capability boundaries",
+                    ],
+                },
+                {
+                    "stem": "Your confidence in choosing AI vs non-AI solutions",
+                    "options": [
+                        "Recognise when AI might help in a task",
+                        "Compare AI vs traditional approaches at a high level",
+                        "Make informed AI-vs-non-AI choices for specific problems",
+                        "Set decision criteria for AI investment in your function",
+                        "Architect mixed AI / non-AI solution portfolios at scale",
+                    ],
+                },
             ],
         },
         {
@@ -273,6 +303,36 @@ IND_TEMPLATE = {
                         "Clean, transform & visualise data for insights",
                         "Define data governance standards for your function",
                         "Build data culture & literacy across the organisation",
+                    ],
+                },
+                {
+                    "stem": "Your handling of data quality and reliability",
+                    "options": [
+                        "Know clean data matters",
+                        "Spot obvious errors and gaps in datasets",
+                        "Profile data and apply quality checks before analysis",
+                        "Define data quality standards for your function",
+                        "Lead enterprise-wide data quality and lineage initiatives",
+                    ],
+                },
+                {
+                    "stem": "Your use of data to drive decisions",
+                    "options": [
+                        "Use simple metrics to check progress",
+                        "Reference dashboards and reports in decisions",
+                        "Build your own data views to inform decisions",
+                        "Drive evidence-based decision frameworks across the team",
+                        "Embed a data-first decision culture across the organisation",
+                    ],
+                },
+                {
+                    "stem": "Your view on data privacy and ethics",
+                    "options": [
+                        "Know personal data must be protected",
+                        "Follow basic data privacy and access rules",
+                        "Apply privacy-by-design in your work products",
+                        "Define data ethics and privacy guardrails for projects",
+                        "Set enterprise-wide data ethics and compliance standards",
                     ],
                 },
             ],
@@ -313,6 +373,36 @@ IND_TEMPLATE = {
                         "Define prompt governance & GenAI usage standards",
                     ],
                 },
+                {
+                    "stem": "Your ability to validate GenAI outputs",
+                    "options": [
+                        "Re-read outputs for obvious errors",
+                        "Check facts and citations against trusted sources",
+                        "Apply structured QA before shipping AI-generated content",
+                        "Define output-quality and review standards for the team",
+                        "Architect automated evaluation and red-teaming pipelines",
+                    ],
+                },
+                {
+                    "stem": "Your application of GenAI to complex tasks",
+                    "options": [
+                        "Use GenAI for short, simple tasks",
+                        "Use GenAI for drafting, summarising and ideation",
+                        "Apply GenAI to multi-step research, analysis or creation",
+                        "Design GenAI-native workflows for your function",
+                        "Build GenAI-powered products for the enterprise or customers",
+                    ],
+                },
+                {
+                    "stem": "Your sharing and teaching of GenAI practice",
+                    "options": [
+                        "Show peers what tools you're trying",
+                        "Share useful prompts and tips informally",
+                        "Run hands-on demos and build a team prompt library",
+                        "Lead GenAI training programmes and communities of practice",
+                        "Define GenAI capability frameworks for the enterprise",
+                    ],
+                },
             ],
         },
         {
@@ -349,6 +439,36 @@ IND_TEMPLATE = {
                         "Use AutoML, Azure ML or Vertex AI for model building",
                         "Connect AI services via REST APIs & SDKs",
                         "Design scalable AI infrastructure & MLOps pipelines",
+                    ],
+                },
+                {
+                    "stem": "Your evaluation of new AI tools",
+                    "options": [
+                        "Try tools peers recommend",
+                        "Compare 2-3 tools against simple criteria before adopting",
+                        "Run structured trials with success metrics",
+                        "Lead procurement and standardisation of AI tools",
+                        "Set enterprise tool strategy and vendor selection standards",
+                    ],
+                },
+                {
+                    "stem": "Your customisation and configuration of AI tools",
+                    "options": [
+                        "Use tools with default settings",
+                        "Configure settings, integrations and shortcuts to fit your needs",
+                        "Customise AI tools deeply (workflows, plugins, extensions)",
+                        "Lead tool customisation and integration projects across teams",
+                        "Architect bespoke enterprise tooling on top of AI platforms",
+                    ],
+                },
+                {
+                    "stem": "Your knowledge of AI infrastructure",
+                    "options": [
+                        "Heard of cloud and APIs",
+                        "Understand basic concepts: cloud, APIs, model hosting",
+                        "Deploy small AI services on cloud platforms",
+                        "Design scalable AI infra for production use cases",
+                        "Architect MLOps, governance and cost models at enterprise scale",
                     ],
                 },
             ],
@@ -389,6 +509,36 @@ IND_TEMPLATE = {
                         "Create AI Centre of Excellence & community of practice",
                     ],
                 },
+                {
+                    "stem": "Your alignment of AI work to business value",
+                    "options": [
+                        "Know AI should help the business",
+                        "Tie AI experiments to a business goal",
+                        "Track AI work against ROI / impact metrics",
+                        "Build business cases that drive AI investment decisions",
+                        "Align an enterprise AI portfolio to strategic value pools",
+                    ],
+                },
+                {
+                    "stem": "Your tracking of AI initiative outcomes",
+                    "options": [
+                        "Notice if an AI tool helped",
+                        "Capture qualitative feedback on AI use",
+                        "Define and measure 2-3 KPIs per AI initiative",
+                        "Run portfolio reviews of AI initiatives with quantified outcomes",
+                        "Lead enterprise AI value-realisation reporting and governance",
+                    ],
+                },
+                {
+                    "stem": "Your storytelling about AI to stakeholders",
+                    "options": [
+                        "Share that you tried AI",
+                        "Walk peers through what AI helped you do",
+                        "Pitch AI results and learnings to your manager / team",
+                        "Present AI strategy and outcomes to senior stakeholders",
+                        "Shape board-level narrative on AI value and transformation",
+                    ],
+                },
             ],
         },
         {
@@ -427,6 +577,36 @@ IND_TEMPLATE = {
                         "Set AI policy, ethics board & regulatory compliance",
                     ],
                 },
+                {
+                    "stem": "Your handling of bias and fairness",
+                    "options": [
+                        "Know AI can be biased",
+                        "Identify obvious bias in AI outputs",
+                        "Test AI outputs across user groups and edge cases",
+                        "Design fairness checks and mitigations across initiatives",
+                        "Set fairness standards and audit programmes enterprise-wide",
+                    ],
+                },
+                {
+                    "stem": "Your understanding of AI regulation and compliance",
+                    "options": [
+                        "Heard of GDPR and AI regulation",
+                        "Know which regulations apply to your work",
+                        "Apply compliance requirements in your AI work",
+                        "Lead compliance reviews for AI initiatives",
+                        "Shape org policy aligned with EU AI Act, NIST AI RMF, etc.",
+                    ],
+                },
+                {
+                    "stem": "Your behaviour modelling for responsible AI",
+                    "options": [
+                        "Use AI responsibly in your own work",
+                        "Encourage peers to follow responsible AI practices",
+                        "Coach colleagues on responsible AI in their work",
+                        "Embed responsible AI rituals into team operating models",
+                        "Champion responsible AI culture across the organisation",
+                    ],
+                },
             ],
         },
         {
@@ -463,6 +643,36 @@ IND_TEMPLATE = {
                         "Apply agile delivery methods to AI projects",
                         "Establish KPIs & value measurement for AI delivery",
                         "Drive org change management for AI adoption",
+                    ],
+                },
+                {
+                    "stem": "Your stakeholder management in AI projects",
+                    "options": [
+                        "Update stakeholders when asked",
+                        "Provide regular status updates with clear language",
+                        "Engage stakeholders proactively across the project lifecycle",
+                        "Align senior stakeholders on AI strategy, scope and trade-offs",
+                        "Lead board-level engagement on AI transformation",
+                    ],
+                },
+                {
+                    "stem": "Your handling of failed or stalled AI initiatives",
+                    "options": [
+                        "Recognise when an AI initiative is in trouble",
+                        "Raise issues with the team and seek support",
+                        "Diagnose root causes and re-plan with the team",
+                        "Make pivot / kill / re-scope decisions decisively",
+                        "Institutionalise lessons learned across the enterprise portfolio",
+                    ],
+                },
+                {
+                    "stem": "Your continuous improvement of AI delivery",
+                    "options": [
+                        "Note what worked and what didn't",
+                        "Run simple retrospectives after AI work",
+                        "Apply structured retros and update playbooks each iteration",
+                        "Refine your team's AI delivery method continually",
+                        "Shape the enterprise's AI delivery operating model",
                     ],
                 },
             ],
