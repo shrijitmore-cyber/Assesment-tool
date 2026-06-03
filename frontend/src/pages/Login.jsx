@@ -33,7 +33,7 @@ export default function Login() {
         <img src={BG_IMG} alt="architecture" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#0A0A0A]/20" />
         <div className="absolute bottom-10 left-10 right-10 text-white">
-          <div className="text-xs uppercase tracking-[0.3em] font-bold mb-4">— i4SKILLS / AIM</div>
+          <div className="text-xs uppercase tracking-[0.3em] font-bold mb-4">— Indi4 / AIM</div>
           <div className="text-4xl font-black tracking-tighter leading-tight max-w-md" style={{ fontFamily: "Chivo" }}>
             Benchmark your AI readiness. Build a roadmap that scales.
           </div>

@@ -43,7 +43,7 @@ export default function DashboardShell({ children }) {
         <div className="p-6 border-b border-[#1f1f22]">
           <Link to="/" className="block">
             <div className="font-black text-xl tracking-tighter" style={{ fontFamily: "Chivo" }}>
-              i4SKILLS<span className="text-[#7A91D8]">/</span>AIM
+              Indi4<span className="text-[#7A91D8]">/</span>AIM
             </div>
             <div className="text-[10px] uppercase tracking-[0.25em] text-white/50 mt-1">
               AI Impact & Maturity

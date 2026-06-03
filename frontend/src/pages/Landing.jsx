@@ -7,10 +7,10 @@ const LOGO_URLS = [
 ];
 
 const HERO_IMG =
-  "https://static.prod-images.emergentagent.com/jobs/b7dc9aa9-c54d-427d-8f6f-7958b15ad824/images/17a6bfad5bafbbe11b7d546d4eb8f49997a1a74e73bdf568d707e26618cc1573.png";
+  "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
 
 const FEATURE_IMG =
-  "https://static.prod-images.emergentagent.com/jobs/b7dc9aa9-c54d-427d-8f6f-7958b15ad824/images/055a97b565b3e265178babb400979cb210f4b2e2fad6633f0fb58f95aaa6e274.png";
+  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
 
 export default function Landing() {
   const { user } = useAuth();
@@ -26,7 +26,7 @@ export default function Landing() {
             <div className="w-8 h-8 bg-[#002FA7]" />
             <div>
               <div className="font-black tracking-tighter text-lg" style={{ fontFamily: "Chivo" }}>
-                i4SKILLS<span className="text-[#002FA7]">/</span>AIM
+                Indi4<span className="text-[#002FA7]">/</span>AIM
               </div>
               <div className="text-[10px] uppercase tracking-[0.25em] text-[#52525B]">
                 AI Impact &amp; Maturity
@@ -72,7 +72,7 @@ export default function Landing() {
             <span className="text-[#002FA7]">In minutes.</span>
           </h1>
           <p className="mt-8 text-lg text-[#52525B] leading-relaxed max-w-xl">
-            The i4SKILLS AIM Diagnostic benchmarks your organization&apos;s AI
+            The Indi4 AIM Diagnostic benchmarks your organization&apos;s AI
             maturity across 6 executive dimensions and delivers a personalised
             roadmap to scale impact. Built for C-suite leaders, HR strategists,
             and individuals alike.
@@ -219,7 +219,7 @@ export default function Landing() {
 
       <footer className="border-t border-[#E5E5E5] bg-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-8 text-xs uppercase tracking-[0.2em] text-[#52525B] flex items-center justify-between">
-          <div>© i4SKILLS / Indifour Consult Pvt Ltd</div>
+          <div>© Indi4</div>
           <div>v1.0 · AIM Diagnostic</div>
         </div>
       </footer>

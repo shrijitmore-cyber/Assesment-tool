@@ -234,7 +234,7 @@ export default function Results() {
         </div>
 
         <div className="mt-12 text-xs uppercase tracking-[0.2em] text-[#52525B] text-center">
-          © i4SKILLS / Indifour Consult · Confidential
+          © Indi4 · Confidential
         </div>
       </main>
     </div>
